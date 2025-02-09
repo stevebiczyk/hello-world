@@ -1,11 +1,28 @@
 "use client";
 
-export default function ErrorBoundarry({ error }: { error: Error }) {
+import { useRouter } from "next/router";
+import { startTransition } from "react";
+
+export default function ErrorBoundarry({
+  error,
+  reset,
+}: {
+  error: Error;
+  reset: () => void;
+}) {
+  const router = useRouter();
+  const reload = () => {
+    startTransition(() => {
+      router.refresh();
+      reset();
+    });
+  };
   return (
     <div className="container" style={{ textAlign: "center" }}>
-      <h1 className="title" style={{ fontSize: "2rem" }}>
+      <p className="title" style={{ fontSize: "2rem" }}>
         Error: {error.message}
-      </h1>
+      </p>
+      <button onClick={() => reload()}>Try Again</button>
     </div>
   );
 }
