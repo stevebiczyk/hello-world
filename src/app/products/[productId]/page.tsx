@@ -21,7 +21,7 @@ export default async function ProductDetails({
   const { productId } = await params;
   const title = await new Promise<string>((resolve) => {
     setTimeout(() => {
-      resolve(`IPhone ${productId}`);
+      resolve(`Furry Kittens ${productId}`);
     }, 100);
   });
   return (

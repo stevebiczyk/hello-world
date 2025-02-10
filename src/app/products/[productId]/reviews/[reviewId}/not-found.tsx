@@ -8,12 +8,9 @@ export default function NotFound() {
   const reviewId = pathname.split("/")[4];
   return (
     <div>
-      <h1 className="title" style={{ fontSize: "2rem" }}>
-        404: Page Not Found
-      </h1>
-      <p>
+      <h2>
         Review {reviewId} not found for product {productId}
-      </p>
+      </h2>
     </div>
   );
 }

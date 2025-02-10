@@ -13,7 +13,7 @@ export default function ErrorBoundarry({
   const router = useRouter();
   const reload = () => {
     startTransition(() => {
-      router.refresh();
+      router.reload();
       reset();
     });
   };
