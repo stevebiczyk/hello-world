@@ -6,9 +6,7 @@ export default function Notifications() {
     <Card>
       <div>Notifications</div>
       <div>
-        <Link href="/complex-dashboard/archived">
-          <a>Archived</a>
-        </Link>
+        <Link href="/complex-dashboard/archived">Archived</Link>
       </div>
     </Card>
   );
